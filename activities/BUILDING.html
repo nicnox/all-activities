@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style type="text/css">
+      body {
+        background-color: rgb(21, 241, 216);
+      }
+      #building {
+        background-color: rgb(225, 223, 203);
+        padding: 250px 840px;
+        position: absolute;
+        top: 50px;
+        left: 5px;
+        z-index: 0;
+      }
+      #p1 {
+        background-color: rgb(153, 153, 147);
+        position: absolute;
+        padding: 250px 25px;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+      }
+      #f1 {
+        background-color: rgb(76, 78, 78);
+        position: absolute;
+        padding: 30px 30px;
+        z-index: 1;
+        bottom: 0px;
+        left: 0px;
+      }
+      #p2 {
+        background-color: rgb(153, 153, 147);
+        position: absolute;
+        padding: 250px 30px;
+        z-index: 1;
+        top: 0px;
+        left: 850px;
+      }
+      #f2 {
+        background-color: rgb(76, 78, 78);
+        position: absolute;
+        padding: 30px 30px;
+        z-index: 1;
+        bottom: 0px;
+        left: 0px;
+      }
+      #p3 {
+        background-color: rgb(153, 153, 147);
+        position: absolute;
+        padding: 250px 30px;
+        z-index: 1;
+        top: 0px;
+        right: 500px;
+      }
+      #p4 {
+        background-color: rgb(153, 153, 147);
+        position: absolute;
+        padding: 20px 840px;
+        z-index: 2;
+        top: 0px;
+        left: 0px;
+      }
+      #wall {
+        background-color: rgb(16, 20, 22);
+        position: absolute;
+        padding: 245px 50px;
+        right: 0px;
+        top: 10px;
+        z-index: 1;
+      }
+      #w1 {
+        background-color: rgb(153, 153, 147);
+        position: absolute;
+        padding: 7px 50px;
+        top: 40px;
+        right: 0px;
+      }
+      #w2 {
+        background-color: rgb(153, 153, 147);
+        padding: 245px 7px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+      #Front {
+        background-color: rgba(235, 66, 102, 0.502);
+        padding: 120px 120px;
+        position: absolute;
+        top: 60px;
+        left: 900px;
+      }
+      #window {
+        background-color: rgba(112, 105, 105, 0.502);
+        padding: 20px 20px;
+        position: absolute;
+        bottom: 115px;
+        left: 50px;
+      }
+      #window1 {
+        background-color: rgba(112, 105, 105, 0.502);
+        padding: 20px 20px;
+        position: absolute;
+        bottom: 115px;
+        left: 93px;
+      }
+      #window3 {
+        background-color: rgba(112, 105, 105, 0.502);
+        padding: 20px 20px;
+        position: absolute;
+        bottom: 115px;
+        left: 136px;
+      }
+      #window4 {
+        background-color: rgba(112, 105, 105, 0.502);
+        padding: 20px 20px;
+        position: absolute;
+        bottom: 160px;
+        left: 50px;
+      }
+      #window5 {
+        background-color: rgba(112, 105, 105, 0.502);
+        padding: 20px 20px;
+        position: absolute;
+        bottom: 160px;
+        left: 93px;
+      }
+      #window6 {
+        background-color: rgba(112, 105, 105, 0.502);
+        padding: 20px 20px;
+        position: absolute;
+        bottom: 160px;
+        left: 136px;
+      }
+      #ccs {
+        background-color: rgb(59, 59, 58);
+        position: absolute;
+        padding: 30px 120px;
+        top: 20px;
+        left: 900px;
+      }
+      #ccs2 {
+        background-color: rgb(59, 59, 58);
+        position: absolute;
+        padding: 35px 120px;
+        top: 280px;
+        left: 900px;
+      }
+      #floor1a {
+        background-color: rgb(245, 245, 214);
+        padding: 30px 450px;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+      }
+      #floor1b {
+        background-color: rgb(247, 246, 226);
+        padding: 30px 230px;
+        position: absolute;
+        right: 70px;
+        bottom: 0px;
+        z-index: 0;
+      }
+
+      #floor2a {
+        background-color: rgb(248, 248, 244);
+        padding: 30px 450px;
+        position: absolute;
+        left: 0px;
+        top: 290px;
+      }
+      #floor2b {
+        background-color: rgb(248, 248, 244);
+        padding: 30px 220px;
+        position: absolute;
+        right: 70px;
+        top: 290px;
+        z-index: 0;
+      }
+      #floor3a {
+        background-color: rgb(247, 246, 226);
+        padding: 30px 450px;
+        position: absolute;
+        left: 0px;
+        top: 140px;
+      }
+      #floor3b {
+        background-color: rgb(247, 246, 226);
+        padding: 30px 220px;
+        position: absolute;
+        right: 70px;
+        top: 140px;
+        z-index: 0;
+      }
+      h1 {
+        font-size: 18px;
+        position: absolute;
+        top: -5px;
+        left: 68px;
+        font-family: sans-serif;
+        color: rgb(239, 236, 236);
+      }
+      h2 {
+        font-size: 15px;
+        position: absolute;
+        top: 13px;
+        left: 97px;
+        font-family: sans-serif;
+        color: rgb(239, 236, 236);
+      }
+      h3 {
+        font-size: 18px;
+        position: absolute;
+        top: 25px;
+        left: 15px;
+        font-family: sans-serif;
+        color: rgb(239, 236, 236);
+      }
+      #spost {
+        background-color: rgb(241, 213, 155);
+        position: absolute;
+        padding: 250px 20px;
+        z-index: 1;
+        top: 0px;
+        right: 270px;
+      }
+      #spostl1 {
+        background-color: rgb(241, 213, 155);
+        position: absolute;
+        padding: 250px 20px;
+        z-index: 1;
+        left: 210px;
+        top: 0px;
+      }
+      #spostl2 {
+        background-color: rgb(241, 213, 155);
+        position: absolute;
+        padding: 250px 20px;
+        z-index: 1;
+        left: 420px;
+        top: 0px;
+      }
+      #spostl3 {
+        background-color: rgb(241, 213, 155);
+        position: absolute;
+        padding: 250px 20px;
+        z-index: 1;
+        left: 630px;
+        top: 0px;
+      }
+      #doora {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 45px;
+        left: 50px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #doorb {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 120px;
+        left: 50px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+
+      #doorc {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 345px;
+        left: 50px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #doorcd {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 420px;
+        left: 50px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #doore {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 195px;
+        left: 50px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #doorf {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 270px;
+        left: 50px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #doorg {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 195px;
+        left: 370px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #doorh {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 270px;
+        left: 370px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #doori {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 345px;
+        left: 370px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #doorj {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 420px;
+        left: 370px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #doorl {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 45px;
+        left: 370px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #doorm {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 120px;
+        left: 370px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #doorn {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 45px;
+        left: 460px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #dooro {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 120px;
+        left: 460px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+
+      #doorp {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 345px;
+        left: 460px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #doorq {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 420px;
+        left: 460px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #doorr {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 195px;
+        left: 460px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #doors {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 270px;
+        left: 460px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #doort {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 195px;
+        left: 801px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #dooru {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 270px;
+        left: 801px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #doorv {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 345px;
+        left: 801px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #doorw {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 420px;
+        left: 801px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+
+      #doorx {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 45px;
+        left: 801px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #doory {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 120px;
+        left: 801px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #doorz {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 195px;
+        left: 1530px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #door1 {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 270px;
+        left: 1530px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #door2 {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 345px;
+        left: 1530px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #door3 {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 420px;
+        left: 1530px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #door4 {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 45px;
+        left: 1530px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #door5 {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 120px;
+        left: 1530px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+
+      #door6 {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 195px;
+        left: 1180px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #door7 {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 270px;
+        left: 1180px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #door8 {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 345px;
+        left: 1180px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #door9 {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 420px;
+        left: 1180px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #door10 {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 45px;
+        left: 1180px;
+        z-index: -1;
+        padding: 35px 22px;
+      }
+      #door11 {
+        position: absolute;
+        border-color: rgb(232, 239, 245);
+        border-width: 3px;
+        border-style: solid;
+        background-color: rgb(88, 86, 86);
+        bottom: 120px;
+        left: 1180px;
+        z-index: 2;
+        padding: 5px 22px;
+      }
+      #w1a {
+        background-color: rgb(7, 6, 6);
+        padding: 15px 115px;
+        bottom: 105px;
+        z-index: 0;
+        left: 120px;
+        position: absolute;
+      }
+      #wh1 {
+        padding: 2px 115px;
+        top: 0px;
+        z-index: 0;
+        left: 0px;
+        position: absolute;
+        background-color: rgb(232, 239, 245);
+      }
+      #w2a {
+        background-color: rgb(7, 6, 6);
+        padding: 15px 115px;
+        bottom: 105px;
+        z-index: 0;
+        left: 540px;
+        position: absolute;
+      }
+      #wh2 {
+        padding: 2px 115px;
+        top: 0px;
+        z-index: 0;
+        left: 0px;
+        position: absolute;
+        background-color: rgb(232, 239, 245);
+      }
+      #w1b {
+        background-color: rgb(7, 6, 6);
+        padding: 15px 115px;
+        bottom: 255px;
+        z-index: 0;
+        left: 120px;
+        position: absolute;
+      }
+      #wh1b {
+        padding: 2px 115px;
+        top: 0px;
+        z-index: 0;
+        left: 0px;
+        position: absolute;
+        background-color: rgb(232, 239, 245);
+      }
+      #w2b {
+        background-color: rgb(7, 6, 6);
+        padding: 15px 115px;
+        bottom: 255px;
+        z-index: 0;
+        left: 540px;
+        position: absolute;
+      }
+      #wh2b {
+        padding: 2px 115px;
+        top: 0px;
+        z-index: 0;
+        left: 0px;
+        position: absolute;
+        background-color: rgb(232, 239, 245);
+      }
+
+      #w3c {
+        background-color: rgb(7, 6, 6);
+        padding: 15px 115px;
+        bottom: 405px;
+        z-index: 0;
+        left: 120px;
+        position: absolute;
+      }
+      #wh3c {
+        padding: 2px 115px;
+        top: 0px;
+        z-index: 0;
+        left: 0px;
+        position: absolute;
+        background-color: rgb(232, 239, 245);
+      }
+      #w3c2 {
+        background-color: rgb(7, 6, 6);
+        padding: 15px 115px;
+        bottom: 405px;
+        z-index: 0;
+        left: 540px;
+        position: absolute;
+      }
+      #wh3c2 {
+        padding: 2px 115px;
+        top: 0px;
+        z-index: 0;
+        left: 0px;
+        position: absolute;
+        background-color: rgb(232, 239, 245);
+      }
+      #w1r {
+        background-color: rgb(7, 6, 6);
+        padding: 15px 115px;
+        bottom: 405px;
+        z-index: 0;
+        left: 1265px;
+        position: absolute;
+      }
+      #w1rt {
+        padding: 2px 115px;
+        top: 0px;
+        z-index: 0;
+        left: 0px;
+        position: absolute;
+        background-color: rgb(232, 239, 245);
+      }
+
+      #w2r {
+        background-color: rgb(7, 6, 6);
+        padding: 15px 115px;
+        bottom: 255px;
+        z-index: 0;
+        left: 1265px;
+        position: absolute;
+      }
+      #w2rt {
+        padding: 2px 115px;
+        top: 0px;
+        z-index: 0;
+        left: 0px;
+        position: absolute;
+        background-color: rgb(232, 239, 245);
+      }
+      #w3r {
+        background-color: rgb(7, 6, 6);
+        padding: 15px 115px;
+        bottom: 105px;
+        z-index: 0;
+        left: 1265px;
+        position: absolute;
+      }
+      #w3rt {
+        padding: 2px 115px;
+        top: 0px;
+        z-index: 0;
+        left: 0px;
+        position: absolute;
+        background-color: rgb(232, 239, 245);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="building">
+      <div id="p1"></div>
+      <div id="p2"><div id="f1"></div></div>
+      <div id="p3"><div id="f2"></div></div>
+      <div id="p4"></div>
+      <div id="wall">
+        <div id="w1"></div>
+        <div id="w2"></div>
+      </div>
+      <div id="Front">
+        <div id="window"></div>
+        <div id="window1"></div>
+        <div id="window3"></div>
+        <div id="window4"></div>
+        <div id="window5"></div>
+        <div id="window6"></div>
+      </div>
+      <div id="ccs"></div>
+      <div id="floor1a"></div>
+      <div id="floor1b"></div>
+      <div id="floor2a"></div>
+      <div id="floor2b"></div>
+      <div id="floor3a"></div>
+      <div id="floor3b"></div>
+      <div id="spost"></div>
+      <div id="spostl1"></div>
+      <div id="spostl2"></div>
+      <div id="spostl3"></div>
+      <div id="doora"></div>
+      <div id="doorb"></div>
+      <div id="doorc"></div>
+      <div id="doord"></div>
+      <div id="doore"></div>
+      <div id="doorf"></div>
+      <div id="doorg"></div>
+      <div id="doorh"></div>
+      <div id="doori"></div>
+      <div id="doorj"></div>
+      <div id="doork"></div>
+      <div id="doorl"></div>
+      <div id="doorm"></div>
+      <div id="doorn"></div>
+      <div id="dooro"></div>
+      <div id="doorp"></div>
+      <div id="doorq"></div>
+      <div id="doorr"></div>
+      <div id="doors"></div>
+      <div id="doort"></div>
+      <div id="dooru"></div>
+      <div id="doorv"></div>
+      <div id="doorw"></div>
+      <div id="doorx"></div>
+      <div id="doory"></div>
+      <div id="doorz"></div>
+      <div id="door1"></div>
+      <div id="door2"></div>
+      <div id="door3"></div>
+      <div id="door4"></div>
+      <div id="door5"></div>
+      <div id="door6"></div>
+      <div id="door7"></div>
+      <div id="door8"></div>
+      <div id="door9"></div>
+      <div id="door10"></div>
+      <div id="w1a">
+        <div id="wh1"></div>
+      </div>
+      <div id="w2a">
+        <div id="wh2"></div>
+      </div>
+      <div id="w1b">
+        <div id="wh1b"></div>
+      </div>
+      <div id="w2b">
+        <div id="wh2b"></div>
+      </div>
+      <div id="w3c">
+        <div id="wh3c"></div>
+      </div>
+      <div id="w3c2">
+        <div id="wh3c2"></div>
+      </div>
+      <div id="w1r">
+        <div id="w1rt"></div>
+      </div>
+      <div id="w2r">
+        <div id="w2rt"></div>
+      </div>
+      <div id="w3r">
+        <div id="w3rt"></div>
+      </div>
+      <div id="ccs2">
+        <h1>COLLEGE</h1>
+        <h2>OF</h2>
+        <h3>COMPUTER SCIENCE</h3>
+      </div>
+    </div>
+  </body>
+</html>
